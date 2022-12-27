@@ -9,9 +9,13 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "framer": "^2.2.1",
+    "motion": "^10.15.3",
     "next": "13.1.1",
     "react": "18.2.0",
-    "react-dom": "18.2.0"
+    "react-dom": "18.2.0",
+    "react-map-gl": "^7.0.20",
+    "sass": "^1.57.1"
   },
   "devDependencies": {
     "eslint": "8.30.0",

@@ -8,7 +8,8 @@ export default function Home() {
     <div className={styles.main}>
       <LeftNav />
       <Tweets />
-      <Map long={22.99299} lang={39.357669}  />
+      Yeah
+      <Map long={22.99299} lang={39.357669} />
     </div>
   );
 }

@@ -8,7 +8,7 @@ export default function Home() {
     <div className={styles.main}>
       <LeftNav />
       <Tweets />
-      Yeah
+      Yeah o alekos gamietai
       <Map long={22.99299} lang={39.357669} />
     </div>
   );

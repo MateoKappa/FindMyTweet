@@ -1,0 +1,45 @@
+div.main {
+  width: 100%;
+  overflow: hidden;
+  display: grid;
+  grid-template-columns: 20% 40% 40%;
+  background-color: #d9d9d9;
+  height: 100%;
+}
+
+// button.button {
+//   width: 200px;
+//   height: 50px;
+//   cursor: pointer;
+// }
+
+// div.text {
+//   font-size: 50px;
+//   font-weight: 700;
+//   text-align: center;
+//   position: relative;
+//   top: 40%;
+//   color: rgb(255, 255, 255);
+//   z-index: 2;
+// }
+
+// div.LeftBackground {
+//   z-index: -1;
+//   height: 100vh;
+//   width: 50%;
+//   background-color: #1d9bf0;
+
+//   position: absolute;
+//   top: 0;
+// }
+
+// div.RightBackground {
+//   z-index: -1;
+//   height: 100vh;
+//   width: 50%;
+//   background-color: #1d9bf0;
+
+//   position: absolute;
+//   top: 0;
+//   right: 0;
+// }

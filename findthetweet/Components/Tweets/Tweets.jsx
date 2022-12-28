@@ -1,26 +1,30 @@
-import {useState} from "react";
+import {useEffect, useState} from "react";
 import styles from "./tweets.module.scss";
 import TweetsData from "../TweetsData";
+import useStore from "../DataStorage.jsx";
+
 const Tweets = () => {
-  let TweetsD = TweetsData;
-  console.log(TweetsD, TweetsData);
-  const [onetweet, SetOneTweet] = useState(true);
+  let tweetsD = TweetsData;
+
+  const [onetweet, setOneTweet] = useState(true);
   const [imageonetweet, SetImageOneTweet] = useState({});
+
   const Tweet = ({imgsrc, username, text, emotion, likes, comments}) => {
     return (
       <div className={styles.tweet}>
         <div className={styles.profileContainer}>
           <img src={imgsrc}></img>
           <h3>{username}</h3>
+          <button onClick={() => settingGeo()}>akru</button>
         </div>
         <div className={styles.content}>
           <div className={styles.text}>
             <p>
-              {text.length < 168 ? (
+              {text?.length < 168 ? (
                 text
               ) : (
                 <div>
-                  {text.slice(0, 160)}
+                  {text?.slice(0, 160)}
                   <button
                     onClick={() => {
                       SetImageOneTweet({
@@ -29,7 +33,7 @@ const Tweets = () => {
                         text: text,
                         emotion: emotion,
                       }),
-                        SetOneTweet(false);
+                        setOneTweet(false);
                     }}
                   >
                     more
@@ -66,7 +70,7 @@ const Tweets = () => {
 
       {onetweet ? (
         <div className={styles.tweetContainer}>
-          {TweetsD.map((tweet, index) => (
+          {tweetsD.map((tweet, index) => (
             <div key={index}>
               <Tweet
                 imgsrc="/profile.png"
@@ -85,7 +89,7 @@ const Tweets = () => {
           {imageonetweet.username}
           {imageonetweet.text}
           {imageonetweet.emotion}
-          <button onClick={() => SetOneTweet(true)}>dsadsa</button>
+          <button onClick={() => setOneTweet(true)}>dsadsa</button>
         </div>
       )}
     </div>

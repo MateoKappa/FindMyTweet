@@ -1,12 +1,12 @@
 import * as React from "react";
 import Map, {Marker} from "react-map-gl";
 import styles from "./Map.module.scss";
-import {useState} from "react";
-
+import useStore from "../DataStorage.jsx";
 export default function Maps({long, lang}) {
   const MAPBOX_TOKEN =
-    "pk.eyJ1IjoiZGVzdGluY29mZmVlIiwiYSI6ImNsNmkyZXZ2MzA3cjMza3MydzlvNzQ1N28ifQ.DvzoxROTAMSUGAYEwH_egg";
-
+    "pk.eyJ1Ijoia3Vyb3Nha2lyYWt1bjEiLCJhIjoiY2wyM2F1aHVuMW84MTNjbHBndnJieDR3dCJ9.lczoc6bcyIbLZGSKkqbQrA";
+  const geo = useStore((state) => state.Geo);
+  console.log(geo);
   return (
     <div className={styles.Mapstyle}>
       <Map
@@ -19,9 +19,14 @@ export default function Maps({long, lang}) {
         mapStyle="mapbox://styles/mapbox/streets-v9"
         mapboxAccessToken={MAPBOX_TOKEN}
       >
-        <Marker longitude={long} latitude={lang}>
-          <img src="https://cdn-icons-png.flaticon.com/512/999/999105.png" />
-        </Marker>
+        {geo[0]?.map((data, index) => (
+          <div>
+            {console.log("hello")}
+            <Marker longitude={data.long} latitude={data.lat}>
+              <h2> {data.emotion}</h2>
+            </Marker>
+          </div>
+        ))}
       </Map>
     </div>
   );

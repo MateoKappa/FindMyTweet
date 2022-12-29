@@ -4,10 +4,9 @@ import {useState} from "react";
 import TweetsData from "../TweetsData";
 const LeftNav = () => {
   let tweetsD = TweetsData;
-  const geo = useStore((state) => state.Geo);
-  const setGeo = useStore((state) => state.setGeo);
+  const tweets = useStore((state) => state.tweets);
+  const setTweets = useStore((state) => state.setTweets);
   const [name, setName] = useState();
-  const Tweets = useStore((state) => state.Tweets);
   const Filter = ({filter_title, logo_image_source}) => {
     return (
       <div className={styles.filter}>
@@ -20,7 +19,7 @@ const LeftNav = () => {
   };
 
   const settingGeo = () => {
-    setGeo([...geo, tweetsD]);
+    setTweets([...tweets, ...tweetsD]);
   };
 
   return (
@@ -36,7 +35,6 @@ const LeftNav = () => {
         />
 
         <button onClick={() => settingGeo()}>SUBMIT</button>
-        {Tweets}
       </section>
     </div>
   );

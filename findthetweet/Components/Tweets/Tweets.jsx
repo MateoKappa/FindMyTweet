@@ -1,21 +1,17 @@
 import {useEffect, useState} from "react";
 import styles from "./tweets.module.scss";
-import TweetsData from "../TweetsData";
 import useStore from "../DataStorage.jsx";
-
 const Tweets = () => {
-  let tweetsD = TweetsData;
-
+  const tweets = useStore((state) => state.tweets);
   const [onetweet, setOneTweet] = useState(true);
+  const [page, setPage] = useState(0);
   const [imageonetweet, SetImageOneTweet] = useState({});
-
   const Tweet = ({imgsrc, username, text, emotion, likes, comments}) => {
     return (
       <div className={styles.tweet}>
         <div className={styles.profileContainer}>
           <img src={imgsrc}></img>
           <h3>{username}</h3>
-          <button onClick={() => settingGeo()}>akru</button>
         </div>
         <div className={styles.content}>
           <div className={styles.text}>
@@ -59,18 +55,15 @@ const Tweets = () => {
       </div>
     );
   };
-
   return (
     <div className={styles.tweetsContainer}>
       <div className={styles.titleContainer}>
         <h2 className={styles.title}>Tweet Selection</h2>
       </div>
-
       <h2 id={styles.secondTitle}>Your Most Recent Tweets</h2>
-
       {onetweet ? (
         <div className={styles.tweetContainer}>
-          {tweetsD.map((tweet, index) => (
+          {tweets?.map((tweet, index) => (
             <div key={index}>
               <Tweet
                 imgsrc="/profile.png"

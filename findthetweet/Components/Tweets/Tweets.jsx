@@ -4,8 +4,28 @@ import useStore from "../DataStorage.jsx";
 const Tweets = () => {
   const tweets = useStore((state) => state.tweets);
   const [onetweet, setOneTweet] = useState(true);
-  const [page, setPage] = useState(0);
+  const pages = useStore((state) => state.pages);
   const [imageonetweet, SetImageOneTweet] = useState({});
+  const [pagesNumber, setPagesNumber] = useState([]);
+  const [currentPage, setCurrentPage] = useState(1);
+  useEffect(() => {
+    console.log(tweets);
+    let a, i;
+    let array = [];
+    if (tweets.length % 8 == 0) {
+      a = tweets.length / 8;
+    } else {
+      a = tweets.length / 8 + 1;
+    }
+    console.log(a);
+    for (i = 1; i < a; i++) {
+      array.push(i);
+      console.log(array, "im in");
+    }
+    setPagesNumber(array);
+    console.log(pagesNumber);
+  }, [pages]);
+
   const Tweet = ({imgsrc, username, text, emotion, likes, comments}) => {
     return (
       <div className={styles.tweet}>
@@ -60,19 +80,40 @@ const Tweets = () => {
       <div className={styles.titleContainer}>
         <h2 className={styles.title}>Tweet Selection</h2>
       </div>
+
       <h2 id={styles.secondTitle}>Your Most Recent Tweets</h2>
       {onetweet ? (
         <div className={styles.tweetContainer}>
-          {tweets?.map((tweet, index) => (
-            <div key={index}>
-              <Tweet
-                imgsrc="/profile.png"
-                username={tweet.name}
-                text={tweet.text}
-                emotion={tweet.emotion}
-                likes={tweet.likes}
-                comments={tweet.comments}
-              />
+          {tweets
+            ?.filter(
+              (item, index) =>
+                (index >= 8 * currentPage - 8) & (index <= 8 * currentPage - 1)
+            )
+            .map((tweet, index) => (
+              <div key={index}>
+                <Tweet
+                  imgsrc="/profile.png"
+                  username={tweet.name}
+                  text={tweet.text}
+                  emotion={tweet.emotion}
+                  likes={tweet.likes}
+                  comments={tweet.comments}
+                />
+              </div>
+            ))}
+          {pagesNumber?.map((page, index) => (
+            <div
+              className={styles.pagesCount}
+              key={index}
+              style={{
+                left: `calc(${page}*50px + 50px)`,
+                position: "absolute",
+                bottom: "30px",
+                fontSize: 25,
+              }}
+              onClick={() => setCurrentPage(page)}
+            >
+              {page}
             </div>
           ))}
         </div>

@@ -4,6 +4,7 @@ div.tweetsContainer {
   border-radius: 15px;
   display: flex;
   flex-direction: column;
+  position: relative;
 
   div.titleContainer {
     background-color: #e9eafc;
@@ -32,7 +33,7 @@ div.tweetsContainer {
     grid-template-columns: 45% 45%;
     column-gap: 20px;
     row-gap: 40px;
-    padding: 40px;
+    padding: 70px;
     padding-top: 0;
     justify-content: center;
     div.tweet {
@@ -88,6 +89,17 @@ div.tweetsContainer {
           padding-left: 12px;
         }
       }
+    }
+    div.pagesCount {
+      background-color: #b9b9b9fa;
+      width: 40px;
+      height: 40px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: white;
+      border-radius: 5px;
+      cursor: pointer;
     }
   }
 }

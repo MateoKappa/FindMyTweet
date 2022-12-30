@@ -5,6 +5,7 @@ import TweetsData from "../TweetsData";
 const LeftNav = () => {
   let tweetsD = TweetsData;
   const tweets = useStore((state) => state.tweets);
+  const setPages = useStore((state) => state.setPages);
   const setTweets = useStore((state) => state.setTweets);
   const [name, setName] = useState();
   const Filter = ({filter_title, logo_image_source}) => {
@@ -21,6 +22,9 @@ const LeftNav = () => {
   const settingGeo = () => {
     setTweets([...tweets, ...tweetsD]);
   };
+  const settingPages = () => {
+    setPages(true);
+  };
 
   return (
     <div className={styles.container}>
@@ -34,7 +38,13 @@ const LeftNav = () => {
           onChange={(e) => setName(e.target.value)}
         />
 
-        <button onClick={() => settingGeo()}>SUBMIT</button>
+        <button
+          onClick={() => {
+            settingGeo(), settingPages();
+          }}
+        >
+          SUBMIT
+        </button>
       </section>
     </div>
   );

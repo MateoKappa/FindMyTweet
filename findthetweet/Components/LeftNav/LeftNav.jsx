@@ -1,30 +1,53 @@
 import styles from "../LeftNav/leftNav.module.scss";
-
+import useStore from "../DataStorage.jsx";
+import {useState} from "react";
+import TweetsData from "../TweetsData";
 const LeftNav = () => {
-
-    const Filter = ({ filter_title, logo_image_source }) => {
-        return (
-            <div className={styles.filter}>
-                <div className={styles.filter_objects}>
-                    <img src={logo_image_source}></img>
-                    <h3>{filter_title}</h3>
-                </div>
-            </div>
-        );
-    }
-
+  let tweetsD = TweetsData;
+  const tweets = useStore((state) => state.tweets);
+  const setPages = useStore((state) => state.setPages);
+  const setTweets = useStore((state) => state.setTweets);
+  const [name, setName] = useState();
+  const Filter = ({filter_title, logo_image_source}) => {
     return (
-        <div className={styles.container}>
-            <div className={styles.logo}><img src="/Εικόνα1.png"></img></div>
-            <section className={styles.filter_container}>
-                <Filter filter_title="Login" logo_image_source="/image2.png" />
-                <Filter filter_title="Login" logo_image_source="/image2.png" />
-                <Filter filter_title="Login" logo_image_source="/image2.png" />
-                <Filter filter_title="Login" logo_image_source="/image2.png" />
-                <Filter filter_title="Login" logo_image_source="/image2.png" />
-            </section>
+      <div className={styles.filter}>
+        <div className={styles.filter_objects}>
+          <img src={logo_image_source}></img>
+          <h3>{filter_title}</h3>
         </div>
-    )
-}
+      </div>
+    );
+  };
 
-export default LeftNav
+  const settingGeo = () => {
+    setTweets([...tweets, ...tweetsD]);
+  };
+  const settingPages = () => {
+    setPages(true);
+  };
+
+  return (
+    <div className={styles.container}>
+      <div className={styles.logo}>
+        <img src="/Εικόνα1.png"></img>
+      </div>
+      <section className={styles.filter_container}>
+        <input
+          placeholder="username"
+          value={name}
+          onChange={(e) => setName(e.target.value)}
+        />
+
+        <button
+          onClick={() => {
+            settingGeo(), settingPages();
+          }}
+        >
+          SUBMIT
+        </button>
+      </section>
+    </div>
+  );
+};
+
+export default LeftNav;

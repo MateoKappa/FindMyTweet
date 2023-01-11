@@ -1,9 +1,9 @@
-import Map, {Marker, Popup} from "react-map-gl";
+import Map, { Marker, Popup } from "react-map-gl";
 import styles from "./Map.module.scss";
 import useStore from "../DataStorage.jsx";
-import {useState} from "react";
+import { useState } from "react";
 
-export default function Maps({long, lang}) {
+export default function Maps({ long, lang }) {
   const [popUp, setPopUp] = useState(false);
   const setTweets = useStore((state) => state.setTweets);
   const MAPBOX_TOKEN =
@@ -28,7 +28,7 @@ export default function Maps({long, lang}) {
           latitude: lang,
           zoom: 13,
         }}
-        style={{height: "88vh"}}
+        style={{ height: "98vh" }}
         mapStyle="mapbox://styles/mapbox/streets-v9"
         mapboxAccessToken={MAPBOX_TOKEN}
       >
@@ -42,15 +42,17 @@ export default function Maps({long, lang}) {
                   <div
                     style={{
                       position: "absolute",
-                      top: -60,
+                      top: -180,
                       left: -52,
-                      width: 130,
-                      height: 50,
+                      width: 200,
+                      height: 170,
                       backgroundColor: "white",
+                      padding: 5,
+                      borderRadius: 5,
+                      boxShadow: "0 0 5px 0 rgba(0,0,0,0.5)",
                     }}
                   >
-                    {" "}
-                    dsadsa
+                    My name is John Wick Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima reprehenderit id aliquid hic saepe nemo, obcaecati quae illo fuga praesentium blanditiis ea ipsa, voluptatibus velit est cumque, culpa ipsam! Doloremque?
                   </div>
                   <div
                     style={{
@@ -62,6 +64,7 @@ export default function Maps({long, lang}) {
                       backgroundColor: "white",
                       clippath: "polygon(48% 72%, 0 0, 100% 0)",
                       clipPath: " polygon(48% 72%, 0 0, 100% 0)",
+                      boxShadow: "0 0 5px 0 rgba(0,0,0,0.5)",
                     }}
                   ></div>
                 </div>

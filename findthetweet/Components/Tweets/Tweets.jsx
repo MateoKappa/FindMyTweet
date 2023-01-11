@@ -1,4 +1,4 @@
-import {useEffect, useState} from "react";
+import { useEffect, useState } from "react";
 import styles from "./tweets.module.scss";
 import useStore from "../DataStorage.jsx";
 const Tweets = () => {
@@ -8,17 +8,18 @@ const Tweets = () => {
   const [imageonetweet, SetImageOneTweet] = useState({});
   const [pagesNumber, setPagesNumber] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
+
   useEffect(() => {
     console.log(tweets);
     let a, i;
     let array = [];
-    if (tweets.length % 8 == 0) {
-      a = tweets.length / 8;
+    if (tweets.length % 6 == 0) {
+      a = tweets.length / 6;
     } else {
-      a = tweets.length / 8 + 1;
+      a = tweets.length / 6 + 1;
     }
     console.log(a);
-    for (i = 1; i < a; i++) {
+    for (i = 1; i <= a; i++) {
       array.push(i);
       console.log(array, "im in");
     }
@@ -26,7 +27,7 @@ const Tweets = () => {
     console.log(pagesNumber);
   }, [pages]);
 
-  const Tweet = ({imgsrc, username, text, emotion, likes, comments}) => {
+  const Tweet = ({ imgsrc, username, text, emotion, likes, comments, retweets, views }) => {
     return (
       <div className={styles.tweet}>
         <div className={styles.profileContainer}>
@@ -59,7 +60,7 @@ const Tweets = () => {
             </p>
           </div>
           <div className={styles.details}>
-            time- date-
+            4:19 12/30/2022
             {emotion}
           </div>
         </div>
@@ -69,6 +70,12 @@ const Tweets = () => {
           </p>
           <p>
             {comments} <i className="far fa-comment"></i>
+          </p>
+          <p>
+            {retweets} 12<i className="far fa-retweet"></i>
+          </p>
+          <p>
+            {views} 23<i className="far fa-share"></i>
           </p>
           <span></span>
         </div>
@@ -87,7 +94,7 @@ const Tweets = () => {
           {tweets
             ?.filter(
               (item, index) =>
-                (index >= 8 * currentPage - 8) & (index <= 8 * currentPage - 1)
+                (index >= 6 * currentPage - 6) & (index <= 6 * currentPage - 1)
             )
             .map((tweet, index) => (
               <div key={index}>
@@ -106,10 +113,9 @@ const Tweets = () => {
               className={styles.pagesCount}
               key={index}
               style={{
-                left: `calc(${page}*50px + 50px)`,
+                left: `calc(${page}*40px + 50px)`,
                 position: "absolute",
-                bottom: "30px",
-                fontSize: 25,
+                bottom: "17px",
               }}
               onClick={() => setCurrentPage(page)}
             >

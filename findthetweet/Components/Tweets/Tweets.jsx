@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
-import styles from "./tweets.module.scss";
+import styles from "./Tweets.module.scss";
 import useStore from "../DataStorage.jsx";
+
 const Tweets = () => {
   const tweets = useStore((state) => state.tweets);
   const [onetweet, setOneTweet] = useState(true);

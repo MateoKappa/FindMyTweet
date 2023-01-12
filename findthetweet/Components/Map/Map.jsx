@@ -20,6 +20,7 @@ export default function Maps({ long, lang }) {
     });
     setTweets(allTweetsSorts);
   };
+
   return (
     <div className={styles.Mapstyle}>
       <Map

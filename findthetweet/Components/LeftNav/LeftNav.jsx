@@ -1,14 +1,15 @@
-import styles from "../LeftNav/leftNav.module.scss";
+import styles from "../LeftNav/LeftNav.module.scss";
 import useStore from "../DataStorage.jsx";
-import {useState} from "react";
+import { useState } from "react";
 import TweetsData from "../TweetsData";
+
 const LeftNav = () => {
   let tweetsD = TweetsData;
   const tweets = useStore((state) => state.tweets);
   const setPages = useStore((state) => state.setPages);
   const setTweets = useStore((state) => state.setTweets);
   const [name, setName] = useState();
-  const Filter = ({filter_title, logo_image_source}) => {
+  const Filter = ({ filter_title, logo_image_source }) => {
     return (
       <div className={styles.filter}>
         <div className={styles.filter_objects}>

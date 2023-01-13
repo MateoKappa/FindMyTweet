@@ -9,26 +9,36 @@ const Tweets = () => {
   const [pagesNumber, setPagesNumber] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
   useEffect(() => {
-    console.log(tweets);
     let a, i;
     let array = [];
-    if (tweets.length % 8 == 0) {
-      a = tweets.length / 8;
+    if (tweets.length % 6 == 0) {
+      a = tweets.length / 6;
+      console.log(a);
     } else {
-      a = tweets.length / 8 + 1;
+      a = tweets.length / 6 + 1;
+      console.log(a);
     }
-    console.log(a);
-    for (i = 1; i < a; i++) {
+    for (i = 1; i <= a; i++) {
       array.push(i);
       console.log(array, "im in");
     }
     setPagesNumber(array);
-    console.log(pagesNumber);
   }, [pages]);
 
   const Tweet = ({imgsrc, username, text, emotion, likes, comments}) => {
     return (
-      <div className={styles.tweet}>
+      <div
+        className={styles.tweet}
+        onClick={() => {
+          SetImageOneTweet({
+            image: imgsrc,
+            username: username,
+            text: text,
+            emotion: emotion,
+          }),
+            setOneTweet(false);
+        }}
+      >
         <div className={styles.profileContainer}>
           <img src={imgsrc}></img>
           <h3>{username}</h3>
@@ -87,7 +97,7 @@ const Tweets = () => {
           {tweets
             ?.filter(
               (item, index) =>
-                (index >= 8 * currentPage - 8) & (index <= 8 * currentPage - 1)
+                (index >= 6 * currentPage - 6) & (index <= 6 * currentPage - 1)
             )
             .map((tweet, index) => (
               <div key={index}>

@@ -1,5 +1,9 @@
 div.Mapstyle {
+  position: relative;
   width: 100%;
+  height: 100%;
+  padding: 0px;
+}
   z-index: 5;
   Marker.marker {
     div.popup {

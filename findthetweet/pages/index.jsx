@@ -14,4 +14,4 @@ export default function Home() {
       <Map long={22.94271} lang={39.37303} />
     </div>
   );
-}
+

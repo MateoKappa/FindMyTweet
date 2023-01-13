@@ -1,7 +1,8 @@
-import styles from "../LeftNav/leftNav.module.scss";
+import styles from "../LeftNav/LeftNav.module.scss";
 import useStore from "../DataStorage.jsx";
-import {useState} from "react";
+import { useState } from "react";
 import TweetsData from "../TweetsData";
+
 import PocketBase from "pocketbase";
 const pb = new PocketBase("http://127.0.0.1:8090");
 const LeftNav = () => {
@@ -9,6 +10,7 @@ const LeftNav = () => {
   const tweets = useStore((state) => state.tweets);
   const setPages = useStore((state) => state.setPages);
   const setTweets = useStore((state) => state.setTweets);
+
   const [name, setName] = useState();
   const [emotion, setEmotion] = useState();
   const [location, setLocation] = useState();
@@ -45,8 +47,9 @@ const LeftNav = () => {
     console.log(records.items);
     setTweets([...records.items]);
     setPages(true);
+    filter();
   };
-  // const settingGeo = () => {
+  // const settingPages = () => {
   //   setTweets([...tweetsD]);
   //   setPages(true);
   // };
@@ -66,10 +69,12 @@ const LeftNav = () => {
         <img src="/Εικόνα1.png"></img>
       </div>
       <section className={styles.filter_container}>
-        <input
+        {/* <input
+          className={styles.search}
           placeholder="username"
           value={name}
           onChange={(e) => setName(e.target.value)}
+      
         />
         <input
           placeholder="emotion"

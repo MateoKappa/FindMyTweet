@@ -13,7 +13,7 @@ const TweetData = [
   },
   {
     id: 1,
-    name: "Alekos",
+    name: "Alex",
     text: "dsasdass ds das dsa ds das dsddadsad dsassds o alekos gamietai",
     date: "10/5/2022",
     long: 22.84271,
@@ -26,7 +26,7 @@ const TweetData = [
 
   {
     id: 2,
-    name: "panatoths",
+    name: "Alex",
     text: "dsasdass ds das dsa ds das dsddadsad dsassds",
     date: "10/5/2022",
     long: 22.94271,
@@ -38,7 +38,7 @@ const TweetData = [
   },
   {
     id: 3,
-    name: "antonigas",
+    name: "Alex",
     text: "dsasdass ds das dsa ds das dsddadsad dsassds",
     date: "10/5/2022",
     long: 22.94271,
@@ -50,7 +50,7 @@ const TweetData = [
   },
   {
     id: 4,
-    name: "babouinos",
+    name: "Alex",
     text: "dsasdass ds das dsa ds das dsddadsad dsassds",
     date: "10/5/2022",
     long: 22.98271,
@@ -62,7 +62,7 @@ const TweetData = [
   },
   {
     id: 5,
-    name: "receka",
+    name: "Alex",
     text: "dsasdass ds das dsa ds das dsddadsad dsassds",
     date: "10/5/2022",
     long: 22.98271,
@@ -74,7 +74,7 @@ const TweetData = [
   },
   {
     id: 6,
-    name: "basos",
+    name: "Alex",
     text: "dsasdass ds das dsa ds das dsddadsad dsassds",
     date: "10/5/2022",
     long: 23.05271,
@@ -86,7 +86,7 @@ const TweetData = [
   },
   {
     id: 7,
-    name: "basos",
+    name: "Alex",
     text: "dsasdass ds das dsa ds das dsddadsad dsassds",
     date: "10/5/2022",
     long: 23.05271,
@@ -98,7 +98,7 @@ const TweetData = [
   },
   {
     id: 8,
-    name: "basos",
+    name: "Alex",
     text: "dsasdass ds das dsa ds das dsddadsad dsassds",
     date: "10/5/2022",
     long: 23.05271,
@@ -110,7 +110,7 @@ const TweetData = [
   },
   {
     id: 9,
-    name: "Mateo",
+    name: "Alex",
     text: "dsasdass ds das dsa ds das dsddadsad dsassds dsasdass ds das dsa ds das dsddadsad dsassds",
     date: "10/5/2022",
     long: 22.94271,
@@ -122,7 +122,7 @@ const TweetData = [
   },
   {
     id: 10,
-    name: "Alekos",
+    name: "Alex",
     text: "dsasdass ds das dsa ds das dsddadsad dsassds o alekos gamietai",
     date: "10/5/2022",
     long: 22.84271,
@@ -135,7 +135,7 @@ const TweetData = [
 
   {
     id: 11,
-    name: "panatoths",
+    name: "Alex",
     text: "dsasdass ds das dsa ds das dsddadsad dsassds",
     date: "10/5/2022",
     long: 22.94271,
@@ -147,7 +147,7 @@ const TweetData = [
   },
   {
     id: 12,
-    name: "antonigas",
+    name: "Mateo",
     text: "dsasdass ds das dsa ds das dsddadsad dsassds",
     date: "10/5/2022",
     long: 22.94271,
@@ -159,7 +159,7 @@ const TweetData = [
   },
   {
     id: 13,
-    name: "babouinos",
+    name: "Mateo",
     text: "dsasdass ds das dsa ds das dsddadsad dsassds",
     date: "10/5/2022",
     long: 22.98271,
@@ -171,7 +171,7 @@ const TweetData = [
   },
   {
     id: 14,
-    name: "receka",
+    name: "Mateo",
     text: "dsasdass ds das dsa ds das dsddadsad dsassds",
     date: "10/5/2022",
     long: 22.98271,
@@ -183,7 +183,7 @@ const TweetData = [
   },
   {
     id: 15,
-    name: "basos",
+    name: "Mateo",
     text: "dsasdass ds das dsa ds das dsddadsad dsassds",
     date: "10/5/2022",
     long: 23.05271,
@@ -195,7 +195,7 @@ const TweetData = [
   },
   {
     id: 16,
-    name: "basos",
+    name: "Mateo",
     text: "dsasdass ds das dsa ds das dsddadsad dsassds",
     date: "10/5/2022",
     long: 23.05271,
@@ -207,7 +207,7 @@ const TweetData = [
   },
   {
     id: 17,
-    name: "basos",
+    name: "Mateo",
     text: "dsasdass ds das dsa ds das dsddadsad dsassds",
     date: "10/5/2022",
     long: 23.05271,

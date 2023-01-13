@@ -1,6 +1,7 @@
 div.container {
-  background-color: #e0e0e0;
+  background-color: #F4F4FB;
   height: 100%;
+
   div.logo {
     height: 20%;
     display: flex;
@@ -19,6 +20,27 @@ div.container {
     flex-direction: column;
     align-items: center;
     margin-top: 100px;
+
+    button.submit {
+      margin-top: 20px;
+      padding: 5px;
+      border: none;
+      background-color: #5E69EE;
+      color: #ffffff;
+      border-radius: 5px;
+      font-size: 12px;
+      font-weight: 700;
+    }
+
+    input.search {
+      width: 186px;
+      height: 35px;
+      border-radius: 10px;
+      border: none;
+      padding-left: 20px;
+      margin-bottom: 30px;
+      transition: 0.3s ease-in-out;
+    }
 
     div.filter {
       height: 35px;

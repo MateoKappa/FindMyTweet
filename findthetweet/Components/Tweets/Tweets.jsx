@@ -19,7 +19,7 @@ const Tweets = () => {
     } else {
       a = tweets.length / 6 + 1;
     }
-    console.log(a);
+    // console.log(a);
     for (i = 1; i <= a; i++) {
       array.push(i);
       console.log(array, "im in");

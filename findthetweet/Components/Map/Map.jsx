@@ -35,12 +35,17 @@ export default function Maps({ long, lang }) {
       >
         {tweets?.map((data, index) => (
           <div key={index} onClick={() => popUpChecker(data)}>
-            <Marker longitude={data.long} latitude={data.lat}>
+            <Marker
+              longitude={data.long}
+              latitude={data.lat}
+              className={styles.marker}
+            >
               {console.log(data.popup)}
               <h2> {data.emotion}</h2>
               {data.popup ? (
                 <div>
                   <div
+                    className={styles.popup}
                     style={{
                       position: "absolute",
                       top: -180,

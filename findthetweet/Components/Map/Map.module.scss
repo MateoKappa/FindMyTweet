@@ -4,3 +4,15 @@ div.Mapstyle {
   height: 100%;
   padding: 0px;
 }
+  z-index: 5;
+  Marker.marker {
+    div.popup {
+      position: absolute;
+      top: -60;
+      left: -52;
+      width: 130;
+      height: 50;
+      background-color: white;
+    }
+  }
+}

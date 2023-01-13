@@ -11,7 +11,6 @@ const Tweets = () => {
   const [currentPage, setCurrentPage] = useState(1);
 
   useEffect(() => {
-    console.log(tweets);
     let a, i;
     let array = [];
     if (tweets.length % 6 == 0) {
@@ -25,12 +24,22 @@ const Tweets = () => {
       console.log(array, "im in");
     }
     setPagesNumber(array);
-    console.log(pagesNumber);
   }, [pages]);
 
   const Tweet = ({ imgsrc, username, text, emotion, likes, comments, retweets, views }) => {
     return (
-      <div className={styles.tweet}>
+      <div
+        className={styles.tweet}
+        onClick={() => {
+          SetImageOneTweet({
+            image: imgsrc,
+            username: username,
+            text: text,
+            emotion: emotion,
+          }),
+            setOneTweet(false);
+        }}
+      >
         <div className={styles.profileContainer}>
           <img src={imgsrc}></img>
           <h3>{username}</h3>

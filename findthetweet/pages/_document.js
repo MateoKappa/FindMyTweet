@@ -1,9 +1,12 @@
-import {Html, Head, Main, NextScript} from "next/document";
+import React from "react";
+import { Html, Head, Main, NextScript } from "next/document";
+import { CssBaseline } from "@nextui-org/react";
 
 export default function Document() {
   return (
     <Html>
       <Head>
+        {CssBaseline.flush()}
         <link
           href="https://api.mapbox.com/mapbox-gl-js/v2.6.1/mapbox-gl.css"
           rel="stylesheet"

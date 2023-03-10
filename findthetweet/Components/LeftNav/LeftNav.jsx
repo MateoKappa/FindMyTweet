@@ -14,7 +14,7 @@ const LeftNav = () => {
   const [name, setName] = useState();
   const [emotion, setEmotion] = useState();
   const [location, setLocation] = useState();
-  const Filter = ({filter_title, logo_image_source}) => {
+  const Filter = ({ filter_title, logo_image_source }) => {
     return (
       <div className={styles.filter}>
         <div className={styles.filter_objects}>
@@ -45,9 +45,9 @@ const LeftNav = () => {
           : `name = ""`,
     });
     console.log(records.items);
+
     setTweets([...records.items]);
     setPages(true);
-    filter();
   };
   // const settingPages = () => {
   //   setTweets([...tweetsD]);
@@ -69,12 +69,11 @@ const LeftNav = () => {
         <img src="/Εικόνα1.png"></img>
       </div>
       <section className={styles.filter_container}>
-        {/* <input
+        <input
           className={styles.search}
           placeholder="username"
           value={name}
           onChange={(e) => setName(e.target.value)}
-      
         />
         <input
           placeholder="emotion"

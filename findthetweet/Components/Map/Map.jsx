@@ -3,7 +3,7 @@ import styles from "./Map.module.scss";
 import useStore from "../DataStorage.jsx";
 import { useState } from "react";
 
-export default function Maps({ long, lang }) {
+export default function Maps({ long, lang, setVisible }) {
   const [popUp, setPopUp] = useState(false);
   const setTweets = useStore((state) => state.setTweets);
   const MAPBOX_TOKEN =
@@ -41,30 +41,41 @@ export default function Maps({ long, lang }) {
               className={styles.marker}
             >
               {console.log(data.popup)}
-              <h2> {data.emotion}</h2>
+              <h2> {data.emotion == "happy" ? "😁" : "🙁"}</h2>
               {data.popup ? (
                 <div>
                   <div
                     className={styles.popup}
                     style={{
                       position: "absolute",
-                      top: -180,
-                      left: -52,
-                      width: 200,
-                      height: 170,
+                      bottom: 30,
+                      left: -50,
+                      width: 120,
                       backgroundColor: "white",
-                      padding: 5,
+                      padding: 10,
+                      margin: "auto",
                       borderRadius: 5,
                       boxShadow: "0 0 5px 0 rgba(0,0,0,0.5)",
                     }}
                   >
-                    My name is John Wick Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima reprehenderit id aliquid hic saepe nemo, obcaecati quae illo fuga praesentium blanditiis ea ipsa, voluptatibus velit est cumque, culpa ipsam! Doloremque?
+                    Calling is an important song to me, as it marks the point
+                    where ...{" "}
+                    <button
+                      style={{
+                        fontSize: 10,
+                        padding: "0 2px",
+                      }}
+                      onClick={() => setVisible(true)}
+                    >
+                      {" "}
+                      more
+                    </button>
                   </div>
                   <div
                     style={{
                       position: "absolute",
                       top: -10,
-                      left: -3,
+                      left: -5,
                       width: 30,
                       height: 20,
                       backgroundColor: "white",
